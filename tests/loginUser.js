@@ -296,13 +296,16 @@ response = await axios(configLogin).then((response) => {
     }
 });
 
-
-return code;
+//return code;
+return {
+    secret: code,
+    cookiesAll: cookieData
+  };
 
 
 }
 
-module.exports = {login, cookieData};
+module.exports = {login};
 
 
 

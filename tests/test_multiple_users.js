@@ -71,6 +71,7 @@ describe('BSS Sanity Suite', () => {
             headersConfig = await axios(config).then((response) => {
             statusCode = response.status;
             console.log('Response Body :===>>> ', response.data);
+    
            
            const headers = cleansCode(String(response.headers['set-cookie']))
           //  console.log("COOKIE  HEADERS- ", headers);

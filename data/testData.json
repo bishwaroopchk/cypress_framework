@@ -359,6 +359,17 @@
                     }
                 }
             },
-            "USER_PROFILE_Copy": {}
+           "set_pins":
+           {
+
+            "sendMailFlag": "N",
+            
+            "parentalControlPin" : "1111",
+            
+            "purchasePin" : "",
+            
+            "onePinFlag" : "Y"
+            
+            }
         }
     }

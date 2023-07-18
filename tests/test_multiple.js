@@ -18,7 +18,10 @@ const qs = require('qs');
 var formurlencoded = require('form-urlencoded');
 const querystring = require('querystring');
 const { error } = require('console');
-const loginuser = require("./loginUser");
+const loginuser  = require("./loginUser");
+
+//const myData = login();
+
 
 var cookieSession = require('cookie-session')
 var express = require('express')
@@ -40,26 +43,9 @@ let headersConfig = null;
 
 describe('BSS Sanity Suite', () => {
 
-    it('Create User - CRM Account List', async function () {
+    it('Login User', async function () {
         this.timeout(0);
 
-        var array = new Array();
-
-        app.set('trust proxy', 1);
-
-        app.use(cookieSession({
-            name: 'session',
-            keys: [],
-          
-            // Cookie Options
-            maxAge: 24 * 60 * 60 * 1000 // 24 hours
-          }))
-
-          app.use(function (req, next) {
-            req.session.nowInMinutes = Math.floor(Date.now() / 60e3)
-            next()
-          })
-       
         let secret = null;
 
         secret = await loginuser.login('ci.pp.sqd04.ts018@ci-opus-stg.com', 'Telus@1234');
@@ -69,37 +55,51 @@ describe('BSS Sanity Suite', () => {
        // secret = await loginuser.login('ci.pp.sqd04.ts016@ci-opus-stg.com', 'Telus@1234');
        // console.log('SECRET KEY -- > ', secret );
         //array.push(secret);
+        //let x = await getCookies.cookieData;
 
-        console.log('COOKIES ->>> ',loginuser.cookieData);
+        // console.log('SECRET ->>> ',secret.secret);
+        // console.log('COOKIES ->>> ',secret.cookiesAll);
 
         // const userprofile = {
         //     'method': 'GET',
-        //     'url': 'https://telus.sit.n.svc.tv.telus.net/TELUS/T2.2/R/ENG/ANDROID_TV_STB/OPTIK/USER/PROFILE',
+        //     'url': 'https://telus.preprod.n.svc.tv.telus.net/TELUS/T2.2/R/ENG/ANDROID_TV_STB/OPTIK/USER/PROFILE',
         //     //'url': 'https://telusidentity-pp.telus.com/idp/IV6jn/resumeSAML20/idp/SSO.ping?service_type=optik',
         //     'maxBodyLength': Infinity,
         //     'headers': {
         //         'restful': 'yes',
-        //         'Cookie': ,
-        //         'Content-Type': 'application/x-www-form-urlencoded',
-        //         'Host': 'telusidentity-pp.telus.com',
-        //         'User-Agent': 'PostmanRuntime/7.32.2',
-        //         'Accept': '*/*',
-        //         'Origin': 'https://telusidentity-pp.telus.com',
+        //         'Cookie': secret.cookiesAll,
+        //         //'Content-Type': 'application/x-www-form-urlencoded',
+        //         'Host': 'telus.preprod.n.svc.tv.telus.net',
+        //         'Connection': 'keep-alive',
+        //        // 'User-Agent': 'PostmanRuntime/7.32.2',
+        //        // 'Accept': '*/*',
+        //         //'Origin': 'https://telusidentity-pp.telus.com',
         //         // 'Referer': formAction,
-        //         'Referer': 'https://telusidentity-pp.telus.com/idp/SSO.saml2',
-        //         't-optik-tvos': '1.0.0',
-        //         'telusScripts': 'myTelusE2E'
+        //         //'Referer': 'https://telusidentity-pp.telus.com/idp/SSO.saml2',
+        //         //'t-optik-tvos': '1.0.0',
+        //         //'telusScripts': 'myTelusE2E'
     
         //     },
-        //     'data': userCreds,
+        //     //'data': userCreds,
         //     'httpsAgent': httpsAgentPreProd
-        // }
+        }
+
+      //   response = await axios(userprofile).then((response) => {
+      //      console.log('Response Body 1:===>>> ', response.data);
+      // }
+      )
+
+
+    //   response = await axios(userprofile).then((response) => {
+    //     console.log('RESPONSE FOR LOGIN ----->>> ', response.data);
+    // }).catch((error) => { // error is handled in catch block
+    //     if (error.response) { // status code out of the range of 2xx
+    //         console.log('REASON --> ', error.response);
+    //     }
+    // });
 
 
 });
 
-
-
-})
 
 

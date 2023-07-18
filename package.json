@@ -5,13 +5,13 @@
   "scripts": {
     "start": "mocha ./tests/testuser.js --reporter mochawesome",
     "test": "mocha ./tests/*.js --timeout=30000 --reporter mochawesome",
-    "multiple": "mocha ./tests/test_multiple.js"
+    "multiple": "mocha ./tests/test_multiple.js",
+    "btv": "mocha ./tests/btv_credential_clearing.js"
   },
   "author": "",
   "license": "ISC",
   "description": "This is used for testing microservices using automation in NodeJS, Chai and Mocha framework",
   "devDependencies": {
-    "@playwright/test": "^1.34.3",
     "axios": "^1.4.0",
     "chai": "^4.3.7",
     "express": "^4.18.2",
