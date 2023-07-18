@@ -1,4 +1,13 @@
 {
+    "login": {
+        "initiateUrl": "https://oauth.cto.tv.telus.net/as/authorization.oauth2?response_type=code&scope=opuscisso&client_id=opus&state=STBUSER02&redirect_uri=http://localhost",
+        "oAuthHost": "oauth.cto.tv.telus.net",
+        "userAgent": "PostmanRuntime/7.32.2",
+        "maxBodyLength": "Infinity",
+        "telusHost": "telusidentity-pp.telus.com",
+        "toptiktvos": "1.0.0",
+        "telusScripts": "myTelusE2E"
+    },
     "ams_preprod": {
         "url": "https://ams-ma-telus.preprod.n.svc.tv.telus.net",
         "CreateUser_CRMAccountListMgmt_URI": "AMS/rest/crmAccountListMgmtService/subscriberRequest",
@@ -56,4 +65,5 @@
         "STOP_CONTENT_LIVE_URI": "TELUS/T2.0/R/ENG/{{platform}}/{{property}}/CONTENT/USERDATA/LIVE/75",
         "USER_SESSIONS_URI": "TELUS/T2.0/R/ENG/{{platform}}/{{property}}/USER/SESSIONS"
     }
+    
 }
